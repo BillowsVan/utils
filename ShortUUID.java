@@ -8,12 +8,12 @@ import java.util.UUID;
  */
 public class ShortUUID {
 
-    public static char[] alphabet = new char[]{'2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    public static BigInteger alphabetLength = new BigInteger(alphabet.length + "");
+    private static char[] alphabet = new char[]{'2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    private static BigInteger alphabetLength = new BigInteger(alphabet.length + "");
 
     private static BigInteger zero = new BigInteger("0");
 
-    public static String intToString(BigInteger number) {
+    private static String intToString(BigInteger number) {
         StringBuilder output = new StringBuilder();
         BigInteger bigInteger = zero;
         while (!number.max(bigInteger).equals(bigInteger)) {
@@ -26,7 +26,7 @@ public class ShortUUID {
         return output.toString();
     }
 
-    public static BigInteger stringToInt(String str) {
+    private static BigInteger stringToInt(String str) {
         BigInteger bigInteger = zero;
         for (int i = str.length() - 1; i >= 0; i--) {
             bigInteger = bigInteger
